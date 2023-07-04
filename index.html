@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./tailwindstyle.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#222222]">
+    <!-- Navbar -->
+
+    <div class="shadow-xl">
+      <div
+        class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+      >
+        <div class="relative flex items-center justify-between">
+          <div class="flex items-center justify-between gap-20">
+            <a
+              href="/"
+              aria-label="Company"
+              title="Company"
+              class="inline-flex items-center"
+            >
+              <img src="./assets/logo.png" height="40px" width="211px" alt="" />
+            </a>
+            <div class="hidden lg:block">
+              <label for="Search" class="hidden">Search</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <span>
+                    <svg
+                      fill="currentColor"
+                      viewBox="0 0 512 512"
+                      class="w-4 h-4 text-gray-100"
+                    >
+                      <path
+                        d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+                <input
+                  type="search"
+                  name="Search"
+                  placeholder="Search..."
+                  class="w-full py-2 pl-10 pr-2 text-sm rounded-md focus:outline-none bg-[#222222] text-gray-100 border border-[#222222] focus:border-white transition-colors duration-200"
+                />
+              </div>
+            </div>
+          </div>
+          <ul class="items-center hidden space-x-6 lg:flex">
+            <li>
+              <a
+                href="/"
+                aria-label="Our product"
+                title="Our product"
+                class="font-light text-base text-white"
+                >Location</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                aria-label="Our product"
+                title="Our product"
+                class="font-light text-base text-white"
+                >Service</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                aria-label="Product pricing"
+                title="Product pricing"
+                class="font-light text-base text-white"
+                >Bookings</a
+              >
+            </li>
+            <li>
+              <a
+                href="/"
+                class="inline-flex items-center justify-center h-11 px-6 font-medium tracking-wide text-white bg-[#aff12f] rounded-lg shadow-md"
+                aria-label="Sign up"
+                title="Sign up"
+              >
+                Login/Register
+              </a>
+            </li>
+            <li>
+              <a
+                href="/"
+                class="inline-flex items-center justify-center h-11 px-6 font-medium tracking-wide text-white border border-white rounded-lg shadow-md"
+                aria-label="Sign up"
+                title="Sign up"
+              >
+                Join us
+              </a>
+            </li>
+          </ul>
+          <!-- Mobile menu -->
+          <div class="lg:hidden">
+            <button
+              aria-label="Open Menu"
+              title="Open Menu"
+              id="menu-open"
+              class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
+            >
+              <svg class="w-5 text-white" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
+                ></path>
+              </svg>
+            </button>
+            <!-- Mobile menu dropdown -->
+            <div
+              id="menu-dropdown"
+              class="absolute top-0 right-0 w-0 transition-all duration-300 overflow-hidden"
+            >
+              <div
+                class="p-5 bg-[#222222] transition-all duration-200 rounded shadow-md"
+              >
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <a
+                      href="/"
+                      aria-label="Company"
+                      title="Company"
+                      class="inline-flex items-center"
+                    >
+                      <img
+                        src="./assets/logo.png"
+                        height="30px"
+                        width="166.5px"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div>
+                    <button
+                      aria-label="Close Menu"
+                      title="Close Menu"
+                      id="menu-close"
+                      class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    >
+                      <svg class="w-5 text-white" viewBox="0 0 24 24">
+                        <path
+                          fill="currentColor"
+                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <nav>
+                  <ul class="space-y-4">
+                    <li>
+                      <a
+                        href="/"
+                        aria-label="Our product"
+                        title="Our product"
+                        class="font-light text-white"
+                        >Location</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        aria-label="Our product"
+                        title="Our product"
+                        class="font-light text-white"
+                        >Service</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        aria-label="Product pricing"
+                        title="Product pricing"
+                        class="font-light text-white"
+                        >Booking</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        class="inline-flex items-center justify-center w-full h-11 px-6 font-medium tracking-wide text-white shadow-md bg-[#aff12f] rounded-lg"
+                        aria-label="Sign up"
+                        title="Sign up"
+                      >
+                        Login/Register
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/"
+                        class="inline-flex items-center justify-center w-full h-11 px-6 font-medium tracking-wide text-white border border-white rounded-lg shadow-md"
+                        aria-label="Sign up"
+                        title="Sign up"
+                      >
+                        Join us
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- NavBar -->
+
+    <!-- Body  -->
+
+    <div class=" flex md:flex-row flex-col items-center justify-center w-full px-4 md:px-20 py-7">
+      <!-- Sidebar -->
+      <div class="bg-[#222222] w-full mt-10 basis-[25%]">
+        <div
+          class="flex flex-col justify-center p-6 rounded-xl sm:px-12"
+        >
+          <img
+            src="https://source.unsplash.com/150x150/?portrait?3"
+            alt=""
+            class="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+          />
+          <div class="space-y-4 text-center divide-y divide-gray-700">
+            <div class="my-2 space-y-1">
+              <h2 class="text-xl text-white font-semibold sm:text-2xl">
+                Saul Armstrong
+              </h2>
+            </div>
+            <button
+              class="inline-flex items-center justify-center px-10 h-11 font-medium tracking-wide text-white shadow-md bg-[#aff12f] rounded-lg"
+            >
+              Edit Profile
+            </button>
+          </div>
+          <div class="mt-8 w-full">
+            <div>
+              <div class="bg-[#363636] py-3 px-6">
+                <p class="text-sm text-white">General</p>
+              </div>
+              <ul class="py-2">
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-moon text-[#63666a]"></i>
+                    <p>Dark Mode</p>
+                  </div>
+                  <label
+                    for="Toggle1"
+                    class="inline-flex items-center space-x-4 cursor-pointer"
+                  >
+                    <span class="relative">
+                      <input
+                        id="Toggle1"
+                        type="checkbox"
+                        class="hidden peer"
+                        checked
+                      />
+                      <div
+                        class="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-[#aff12f]"
+                      ></div>
+                      <div
+                        class="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"
+                      ></div>
+                    </span>
+                  </label>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-lock text-[#63666a]"></i>
+                    <p>Help Center</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-globe text-[#63666a]"></i>
+                    <p>App Language</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-heart text-[#63666a]"></i>
+                    <p>Favourite Service</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-location-dot text-[#63666a]"></i>
+                    <p>Address</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-circle-question text-[#63666a]"></i>
+                    <p>Support & live chat</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="bg-[#363636] py-3 px-6">
+                <p class="text-sm text-white">About App</p>
+              </div>
+              <ul class="py-2">
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-shield-halved text-[#63666a]"></i>
+                    <p>Privacy Policy</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-file-lines text-[#63666a]"></i>
+                    <p>Terms & Conditions</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i
+                      class="fa-solid fa-gavel fa-flip-horizontal text-[#63666a]"
+                    ></i>
+                    <p>Legal Notices</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-location-dot text-[#63666a]"></i>
+                    <p>About</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+                <li
+                  class="text-gray-100 flex text-sm font-light items-center justify-between py-3"
+                >
+                  <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-star text-[#63666a]"></i>
+                    <p>Rate Us</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right text-gray-100"></i>
+                </li>
+              </ul>
+              <button
+                class="inline-flex items-center justify-center px-10 w-full h-11 font-medium tracking-wide text-white shadow-md bg-[#aff12f] rounded-lg"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar -->
+
+      <!-- Chat Area -->
+      <div
+        class="w-full h-fit basis-[75%] p-3 flex gap-3 bg-[#363636] rounded-2xl"
+      >
+        <!-- Chat Sidebar -->
+
+        <div class="w-full hidden md:block basis-[35%] h-fit bg-[#363636] rounded-lg">
+          <div class="flex items-center justify-between mb-4 px-4">
+            <div class="hidden lg:block w-full">
+              <label for="Search" class="hidden">Search</label>
+              <div class="relative w-full">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <span>
+                    <svg
+                      fill="currentColor"
+                      viewBox="0 0 512 512"
+                      class="w-4 h-4 text-gray-100"
+                    >
+                      <path
+                        d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+                <input
+                  type="search"
+                  name="Search"
+                  placeholder="Search..."
+                  class="w-full py-4 pl-10 pr-2 text-sm rounded-xl focus:outline-none bg-[#222222] text-gray-100 border border-[#222222] focus:border-white transition-colors duration-200"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flow-root">
+            <ul role="list" class="divide-y divide-gray-100/30">
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <p class="text-xs font-extralight text-white mt-2">
+                      email@windster.com
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <p class="text-xs font-extralight text-white mt-2">
+                      email@windster.com
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                      <p class="text-xs font-extralight text-white mt-2">
+                        email@windster.com
+                      </p>
+                      <span
+                        class="flex w-5 h-5 bg-[#aff12f] rounded-full items-center justify-center text-xs text-white"
+                        >3</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <p class="text-xs font-extralight text-white mt-2">
+                      email@windster.com
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <div class="flex justify-between items-baseline">
+                      <p class="text-xs font-extralight text-white mt-2">
+                        email@windster.com
+                      </p>
+                      <span
+                        class="flex w-5 h-5 bg-[#aff12f] rounded-full items-center justify-center text-xs text-white"
+                        >3</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <p class="text-xs font-extralight text-white mt-2">
+                      email@windster.com
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 px-5">
+                <div class="flex items-center space-x-4">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between">
+                      <p
+                        class="text-sm font-normal text-gray-900 truncate dark:text-white"
+                      >
+                        Neil Sims
+                      </p>
+                      <span class="text-white text-xs font-extralight"
+                        >2:30PM</span
+                      >
+                    </div>
+                    <p class="text-xs font-extralight text-white mt-2">
+                      email@windster.com
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-full md:hidden block basis-[20%] h-fit bg-[#363636] rounded-lg">
+          <!-- <div class="flex items-center justify-between mb-4 px-4">
+            <div class="hidden lg:block w-full">
+              <label for="Search" class="hidden">Search</label>
+              <div class="relative w-full">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <span>
+                    <svg
+                      fill="currentColor"
+                      viewBox="0 0 512 512"
+                      class="w-4 h-4 text-gray-100"
+                    >
+                      <path
+                        d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                      ></path>
+                    </svg>
+                  </span>
+                </span>
+                <input
+                  type="search"
+                  name="Search"
+                  placeholder="Search..."
+                  class="w-full py-4 pl-10 pr-2 text-sm rounded-xl focus:outline-none bg-[#222222] text-gray-100 border border-[#222222] focus:border-white transition-colors duration-200"
+                />
+              </div>
+            </div>
+          </div> -->
+          <div class="flow-root">
+            <ul role="list" class="divide-y divide-gray-100/30">
+              <li class="py-4 flex justify-center">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 flex justify-center">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 flex justify-center">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 flex justify-center">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 flex justify-center">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="py-4 flex justify-center">
+                <div class="flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="w-10 h-10 rounded-full"
+                      src="https://source.unsplash.com/150x150/?portrait,businessman"
+                      alt="Neil image"
+                    />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chat Sidebar -->
+
+        <!-- Chat Body -->
+
+        <div
+          class="relative h-fit md:h-[950px] w-full bg-stone-500 rounded-xl basis-[80%]"
+        >
+          <!-- Top Bar -->
+
+          <div
+            class="text-white absolute top-0 w-full bg-[#222222] py-3 px-6 flex items-center justify-between rounded-t-xl"
+          >
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-chevron-left"></i>
+              <div class="flex-shrink-0">
+                <img
+                  class="w-8 h-8 rounded-full"
+                  src="https://source.unsplash.com/150x150/?portrait,businessman"
+                  alt="Neil image"
+                />
+              </div>
+              <h5>Sylvan Strosin</h5>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
+          <!-- Top Bar -->
+
+          <!-- Main Body -->
+
+            <div class=" w-full h-full flex flex-col justify-end gap-4 rounded-2xl px-4 bg-[#7e7e7e]" style="background: radial-gradient(circle at bottom left ,#4a4a4c 35%, transparent 36%), radial-gradient(circle at top right ,#4a4a4c 35%, transparent 36%), radial-gradient(circle at center ,#4a4a4c 15%, transparent 16%);
+            background-size: 2em 2em;
+            background-color: #353535;
+            opacity: 1">
+              <div class=" w-full flex">
+                <div class=" w-fit text-sm h-fit p-3 rounded-t-xl rounded-e-xl bg-white">
+                  <div class=" w-full flex flex-col gap-1 justify-center px-3 h-12 mb-3 bg-[#f0f0fa] border-s-[3px] border-[#aff12f]">
+                    <span class="text-[#aff12f] text-xs">You</span>
+                    <p class=" text-xs">Sleep Well?</p>
+                  </div>
+                  <p>Good Morning Did You Sleep Well?</p>
+                  <div class=" flex mt-2 pr-3 items-center justify-between text-xs font-light text-gray-800 w-full">
+                    <p>12:32PM</p>
+                    <p>see translation?</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" w-full flex">
+                <div class=" w-fit text-sm h-fit p-3 rounded-t-xl rounded-e-xl bg-white">
+                  <div class=" w-full flex flex-col justify-center items-start mb-3 border-[#aff12f]">
+                    <img src="https://source.unsplash.com/250x150/?portrait,businessman" class=" object-cover" alt="">
+                  </div>
+                  <p>Good Morning Did You Sleep Well?</p>
+                  <div class=" flex mt-2 pr-3 items-center justify-between text-xs font-light text-gray-800 w-full">
+                    <p>12:32PM</p>
+                    <p>see translation?</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" w-full flex">
+                <div class=" w-fit text-sm h-fit p-3 rounded-t-xl rounded-e-xl bg-white">
+                  <div class=" w-full flex flex-col gap-1 justify-center px-3 h-12 mb-3 bg-[#f0f0fa] border-s-[3px] border-[#aff12f]">
+                    <span class="text-[#aff12f] text-xs">You</span>
+                    <p class=" text-xs">Sleep Well?</p>
+                  </div>
+                  <p>Good Morning Did You Sleep Well?</p>
+                  <div class=" flex mt-2 pr-3 items-center justify-between text-xs font-light text-gray-800 w-full">
+                    <p>12:32PM</p>
+                    <p>see translation?</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" w-full flex flex-row justify-end">
+                <div class=" w-fit text-sm h-fit p-3 rounded-t-xl rounded-s-xl bg-[#aff12f] text-white">
+                  <p>Good Morning Did You Sleep Well?</p>
+                  <div class=" flex mt-2 pr-3 items-center justify-between text-xs font-light text-gray-100 w-full">
+                    <p>12:32PM</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" w-full flex flex-row justify-end">
+                <div class=" w-fit text-sm h-fit p-3 rounded-t-xl rounded-s-xl bg-[#aff12f] text-white">
+                  <p>Good Morning Did You Sleep Well?</p>
+                  <div class=" flex mt-2 pr-3 items-center justify-between text-xs font-light text-gray-100 w-full">
+                    <p>12:32PM</p>
+                  </div>
+                </div>
+              </div>
+              <div class=" w-full flex mt-10 mb-24">
+                <div class=" w-fit text-sm h-fit p-3 rounded-t-xl rounded-e-xl bg-white">
+                  <p>Good Morning Did You Sleep Well?</p>
+                  <div class=" flex mt-2 pr-3 items-center justify-between text-xs font-light text-gray-800 w-full">
+                    <p>12:32PM</p>
+                    <p>see translation?</p>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+          <!-- Main Body -->
+
+          <!-- Bottom Input -->
+
+          <div class="absolute p-5 bottom-0 right-0 w-full">
+            <div class="block w-full">
+              <label for="Search" class="hidden">Write A Message</label>
+              <div class="relative w-full">
+                <input
+                  type="search"
+                  name="Search"
+                  placeholder="Write A Message..."
+                  class="w-full py-4 pl-4 pr-6 text-sm rounded-xl focus:outline-none bg-[#222222] text-white placeholder:text-white border border-[#222222] focus:border-white transition-colors duration-200"
+                />
+                <button
+                  class="absolute inset-y-0 right-0 flex items-center pr-4"
+                >
+                <div class=" h-9 w-9 bg-[#aff12f] flex items-center justify-center rounded-full">
+                  <i class="fa-solid fa-paper-plane text-white"></i>
+                </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Input -->
+
+        </div>
+
+        <!-- Chat Body -->
+      </div>
+      <!-- Chat Area -->
+    </div>
+
+    <!-- Body -->
+  </body>
+  <script src="./index.js"></script>
+</html>
